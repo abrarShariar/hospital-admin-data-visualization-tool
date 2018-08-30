@@ -1,3 +1,17 @@
+create or replace PACKAGE user_info_pkg AS
+  PROCEDURE insert_user(
+      u_id user_info.id%TYPE,
+      u_name user_info.name%TYPE,
+      u_password user_info.password%TYPE,
+      u_position user_info.position%TYPE
+  );
+
+  PROCEDURE delete_user(
+      u_pid user_info.id%TYPE
+  );
+END user_info_pkg;
+
+
 create or replace PACKAGE BODY user_info_pkg AS
    PROCEDURE insert_user(
       u_id user_info.id%TYPE,
